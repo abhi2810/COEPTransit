@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">COEP Transit</string>
+    <string name="title_activity_homescreen">Map</string>
 </resources>

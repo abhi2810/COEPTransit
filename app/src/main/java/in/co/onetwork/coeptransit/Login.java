@@ -24,6 +24,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().setTitle("Login");
         ed1=(TextInputEditText)findViewById(R.id.userid);
         ed2=(TextInputEditText)findViewById(R.id.password);
     }
@@ -74,5 +75,8 @@ public class Login extends AppCompatActivity {
                 }
             });
         }
+    }
+    public void signup(View v){
+        startActivity(new Intent(this,Signup.class));
     }
 }
