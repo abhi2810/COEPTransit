@@ -2,6 +2,7 @@ package in.co.onetwork.coeptransit;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -16,12 +17,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
+
+
     DatabaseReference root= FirebaseDatabase.getInstance().getReference();
     DatabaseReference user=root.child("user").getRef();
     TextInputEditText ed1,ed2;
     String use,pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().setTitle("Login");
