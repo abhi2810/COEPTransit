@@ -40,7 +40,7 @@ public class Homescreen extends FragmentActivity implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
         gps=new GPSTracker(this);
     }
-//lakk14 says fuck abhi
+//Abhi says no
 
     /**
      * Manipulates the map once available.
