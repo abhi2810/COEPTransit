@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "713846664387",
+    "firebase_url": "https://coept-9cbf8.firebaseio.com",
+    "project_id": "coept-9cbf8",
+    "storage_bucket": "coept-9cbf8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713846664387:android:e6a59b1715e6b574",
+        "android_client_info": {
+          "package_name": "in.co.onetwork.coeptransit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713846664387-kkpfjhd06fvc73ufh6v8h2n6o8r441bc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.co.onetwork.coeptransit",
+            "certificate_hash": "4f671b88b4e4b5d3aa4a236e0bf53ab000013767"
+          }
+        },
+        {
+          "client_id": "713846664387-t7ips44kq65gcl564cq5k9sfvkql6n3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2hMcG6w99t6SrUA3q3QuFepREG4yifTM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713846664387-t7ips44kq65gcl564cq5k9sfvkql6n3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
