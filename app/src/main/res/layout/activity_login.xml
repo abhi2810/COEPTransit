@@ -52,7 +52,6 @@
                 android:layout_margin="15dp"
                 app:fabSize="auto"
                 app:srcCompat="@drawable/login"
-                app:theme="@style/RtlUnderlay.Widget.AppCompat.ActionButton"
                 android:backgroundTint="@color/colorPrimary"
                 android:onClick="login"
                 />
@@ -65,7 +64,8 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:clickable="true"
                 app:fabSize="auto"
-                app:srcCompat="@drawable/signup" />
+                app:srcCompat="@drawable/signup"
+                android:onClick="signup"/>
 
 
         </LinearLayout>

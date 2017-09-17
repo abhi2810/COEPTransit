@@ -1,7 +1,11 @@
 <LinearLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,21 +14,43 @@
     android:layout_width="match_parent"
     android:layout_height="400dp"
     tools:context="in.co.onetwork.coeptransit.Homescreen" />
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_lock_idle_alarm"
-        android:onClick="locate"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="origin"
+            android:src="@android:drawable/ic_lock_idle_lock"
+            android:id="@+id/floatingActionButton3" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="locate"
+            android:src="@android:drawable/ic_lock_idle_alarm"
+            android:layout_centerInParent="true"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:onClick="destination"
+            android:src="@android:drawable/ic_menu_search" />
+    </RelativeLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Distance:? Duration:?"
+        android:text=""
         android:textSize="20dp"
         android:id="@+id/textid"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="driving"
+            android:text="Go to college"
             android:onClick="drive"/>
 
 </LinearLayout>

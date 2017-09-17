@@ -5,14 +5,16 @@ package in.co.onetwork.coeptransit;
  */
 
 public class User {
-    String name,pass,collid,year,email,vowned;
-    User(String collid,String name, String pass, String year,String email,String vowned){
+    String name,pass,collid,year,email,vowned,address,location;
+    User(String collid,String name, String pass, String year,String email,String vowned ,String address,String location){
         this.name=name;
         this.collid=collid;
         this.pass=pass;
         this.year=year;
         this.email=email;
         this.vowned=vowned;
+        this.address=address;
+        this.location=location;
     }
 
     public String getName() {
@@ -61,5 +63,21 @@ public class User {
 
     public void setYear(String year) {
         this.year = year;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }

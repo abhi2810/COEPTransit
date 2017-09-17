@@ -3,6 +3,7 @@ package in.co.onetwork.coeptransit;
 import android.*;
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Criteria;
@@ -59,6 +60,7 @@ public class Homescreen extends FragmentActivity implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
         gps=new GPSTracker(this);
         ShowDistanceDuration=(TextView)findViewById(R.id.textid);
+        dest =new LatLng(18.5294,73.8566);
     }
 //Abhi says no
 
@@ -77,9 +79,8 @@ public class Homescreen extends FragmentActivity implements OnMapReadyCallback {
         if (gps.canGetLocation()){
             latitude=gps.getLatitude();
             longitude=gps.getLongitude();
-            Toast.makeText(this, "Location:"+latitude+" "+longitude, Toast.LENGTH_SHORT).show();
             origin =new LatLng(latitude,longitude);
-            mMap.addMarker(new MarkerOptions().position(origin).title("my"));
+            mMap.addMarker(new MarkerOptions().position(origin).title("Origin"));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origin,15));
         }else{
             gps.showSettingsAlert();
@@ -92,14 +93,14 @@ public class Homescreen extends FragmentActivity implements OnMapReadyCallback {
             longitude=gps.getLongitude();
             Toast.makeText(this, "Location:"+latitude+" "+longitude, Toast.LENGTH_SHORT).show();
             origin =new LatLng(latitude,longitude);
-            mMap.addMarker(new MarkerOptions().position(origin).title("my"));
+            mMap.addMarker(new MarkerOptions().position(origin).title("me"));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origin,15));
         }else{
             gps.showSettingsAlert();
         }
     }
     public void drive(View v){
-        dest =new LatLng(18.5294,73.8566);
+        mMap.addMarker(new MarkerOptions().position(dest).title("COEP"));
         build_retrofit_and_get_response("driving");
     }
     private void build_retrofit_and_get_response(String type) {
@@ -184,5 +185,19 @@ public class Homescreen extends FragmentActivity implements OnMapReadyCallback {
         }
 
         return poly;
+    }
+    public void origin(View v) {
+        if (gps.canGetLocation()){
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origin,15));
+        }else{
+            gps.showSettingsAlert();
+        }
+    }
+    public void destination(View v) {
+        if (gps.canGetLocation()){
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(dest,15));
+        }else{
+            gps.showSettingsAlert();
+        }
     }
 }
