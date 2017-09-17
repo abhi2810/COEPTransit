@@ -1,12 +1,24 @@
-<LinearLayout android:layout_height="match_parent"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:weightSum="10">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content"
+        android:layout_weight="5">
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/map"
@@ -14,33 +26,39 @@
     android:layout_width="match_parent"
     android:layout_height="400dp"
     tools:context="in.co.onetwork.coeptransit.Homescreen" />
-    </RelativeLayout>
-    <RelativeLayout
+        </RelativeLayout>
+        <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+            android:layout_weight="2">
 
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="origin"
-            android:src="@android:drawable/ic_lock_idle_lock"
-            android:id="@+id/floatingActionButton3" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="origin"
+                android:src="@drawable/origin" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="locate"
-            android:src="@android:drawable/ic_lock_idle_alarm"
-            android:layout_centerInParent="true"/>
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:onClick="locate"
+                android:src="@drawable/locate" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:onClick="destination"
-            android:src="@android:drawable/ic_menu_search" />
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:onClick="destination"
+                android:src="@drawable/take" />
     </RelativeLayout>
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="3"
+    android:orientation="vertical"
+    android:gravity="center">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,5 +70,7 @@
             android:layout_height="wrap_content"
             android:text="Go to college"
             android:onClick="drive"/>
-
+</LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

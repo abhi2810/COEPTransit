@@ -1,12 +1,19 @@
 package in.co.onetwork.coeptransit;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -156,7 +163,7 @@ public class Signup extends AppCompatActivity {
                         .getJSONObject("geometry").getJSONObject("location")
                         .getDouble("lat");
                 location=lat+","+lng;
-                Toast.makeText(Signup.this, "location:"+location, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Signup.this, "GeoEncoded LatLong:"+location, Toast.LENGTH_SHORT).show();
                 Log.d("latitude", "" + lat);
                 Log.d("longitude", "" + lng);
             } catch (JSONException e) {
@@ -199,5 +206,42 @@ public class Signup extends AppCompatActivity {
             e.printStackTrace();
         }
         return response;
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater om=getMenuInflater();
+        om.inflate(R.menu.main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item1:
+                AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                dialog.setTitle("Powered by-");
+                LayoutInflater factory = LayoutInflater.from(Signup.this);
+                final View view = factory.inflate(R.layout.dialog_main, null);
+
+                dialog.setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                Toast.makeText(Signup.this,"Thanks",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                dialog.setView(view);
+                dialog.show();
+                break;
+            case R.id.item2:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public MenuInflater getMenuInflater() {
+        return super.getMenuInflater();
     }
 }

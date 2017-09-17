@@ -9,11 +9,21 @@
 
     <ImageView
         android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/oolo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/imageView2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="118dp" />
-
+        android:layout_marginTop="31dp"
+        android:text="COEP Transit"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="30dp"
+        />
 </RelativeLayout>

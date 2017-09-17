@@ -16,6 +16,16 @@ public class User {
         this.address=address;
         this.location=location;
     }
+    User(){
+        name="";
+        collid="";
+        pass="";
+        year="";
+        email="";
+        vowned="";
+        address="";
+        location="";
+    }
 
     public String getName() {
         return name;
